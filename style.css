@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-html, 
+html,
 body {
   margin: 0;
   height: 100%;
@@ -17,78 +17,84 @@ body {
   margin: 100px auto;
   width: 800px;
   min-height: 250px;
-  background-color: white;
+  background-color: #fff;
   border: 1px solid rgb(242, 240, 240);
   border-radius: 10px;
-  box-shadow: 50px;
   padding: 40px;
   box-shadow: 5px 5px 20px 2px lightgray;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
 h1 {
   color: rgb(100, 99, 99);
-  font-weight: bold;
   font-size: 50px;
   margin-top: 10px;
-  text-align: center;
 }
 
-.userInput {
+.grocery__input {
   border: 3px solid rgba(5, 5, 141, 0.834);
   border-radius: 10px;
   height: 50px;
   width: 550px;
   font-size: 20px;
-  color: rgba(5, 5, 141, 0.834);
   padding: 20px;
-  box-shadow: 3px 3px 20px 2px lightgray;
   margin-right: 10px;
+  color: rgba(5, 5, 141, 0.834);
+  box-shadow: 3px 3px 20px 2px #ccc;
   background-color: rgb(241, 251, 251);
 }
 
-.submitBtn {
-  border: 2px solid white;
+.grocery__submit {
+  border: 2px solid #fff;
   border-radius: 10px;
   height: 50px;
   width: 150px;
   font-size: 20px;
-  color: black;
-  background-color:skyblue;
+  color: #000;
+  background-color: #87ceeb;
   cursor: pointer;
 }
 
-.submitBtn:hover {
-  background-color: lightcoral;
+.grocery__submit:active {
+  background-color: #f08080;
 }
 
-.clearItems {
+.grocery__clearitems {
   cursor: pointer;
   color: red;
-  text-align: center;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  margin-top: 20px;
 }
 
+.grocery__clearitems:active {
+  opacity: 0.6;
+}
 
 .grocerylist {
   display: flex;
   flex-direction: column;
+  width: 680px;
 }
 
 .grocerylist > div {
   display: flex;
   align-items: center;
-  margin-left: 30px;
 }
 
 .grocerylist p {
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 25px;
-  margin-right: 500px;
   color: darkblue;
-
+  margin: 10px;
+  width: 80%;
 }
 
 .grocerylist button {
-  border: 2px solid white;
+  border: 2px solid #fff;
   border-radius: 10px;
   height: 25px;
   width: 60px;
