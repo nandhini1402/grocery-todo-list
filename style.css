@@ -74,18 +74,18 @@ h1 {
   opacity: 0.6;
 }
 
-.grocerylist {
+.grocery__list {
   display: flex;
   flex-direction: column;
   width: 680px;
 }
 
-.grocerylist > div {
+.grocery__list > div {
   display: flex;
   align-items: center;
 }
 
-.grocerylist p {
+.grocery__list p {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: 25px;
   color: darkblue;
@@ -93,7 +93,7 @@ h1 {
   width: 80%;
 }
 
-.grocerylist button {
+.grocery__list button {
   border: 2px solid #fff;
   border-radius: 10px;
   height: 25px;
