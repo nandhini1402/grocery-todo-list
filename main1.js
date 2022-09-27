@@ -3,8 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtnElement = document.querySelector('.grocery__submit');
   const groceryListElement = document.querySelector('.grocery__list');
   const clearItemElement = document.querySelector('.grocery__clearitems');
+  const groceryFormElement = document.querySelector('.grocery__form');
 
-  const groceryList = [];
+  let groceryList = [];
   let id = 0;
 
   function renderGroceryList(newList) {
@@ -31,16 +32,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const newList = { id: ++id, text: userInputElement.value };
       groceryList.push(newList);
       renderGroceryList(newList);
+      userInputElement.value = '';
     }
 
     console.log(groceryList);
   }
 
-  function clearGroceryList() {}
+  function clearGroceryList() {
+    groceryList = [];
+    groceryListElement.remove();
+  }
 
   function init() {
     submitBtnElement.addEventListener('click', addGroceryList);
     clearItemElement.addEventListener('click', clearGroceryList);
+    groceryFormElement.addEventListener('submit', addGroceryList);
   }
 
   init();
