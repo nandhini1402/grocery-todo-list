@@ -11,12 +11,14 @@ document.addEventListener('DOMContentLoaded', () => {
   function renderGroceryList(newList) {
     const listContainerElement = document.createElement('div');
     const todoTextElement = document.createElement('p');
+
     const editButtonElement = document.createElement('button');
     editButtonElement.textContent = 'edit';
-    editButtonElement.setAttribute('data-id', newList.id);
-    const deleteButtonElement = document.createElement('button');
-    deleteButtonElement.setAttribute('data-id', newList.id);
+    const deleteButtonElement = document.createElement('button');    
     deleteButtonElement.textContent = 'delete';
+
+    editButtonElement.setAttribute('data-listid', newList.id);
+    deleteButtonElement.setAttribute('data-listid', newList.id);
 
     listContainerElement.setAttribute('class', 'grocery__item');
     todoTextElement.textContent = newList.text;
@@ -34,13 +36,13 @@ document.addEventListener('DOMContentLoaded', () => {
       renderGroceryList(newList);
       userInputElement.value = '';
     }
-
-    console.log(groceryList);
   }
 
   function clearGroceryList() {
     groceryList = [];
-    groceryListElement.remove();
+    Array.from(groceryListElement.children).forEach((element) => {
+      element.remove();
+    });
   }
 
   function init() {
