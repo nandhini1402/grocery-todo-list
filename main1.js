@@ -45,10 +45,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function editOrDeleteItem(event) {
+    const itemId = event.target.getAttribute('data-listid');
+    if (itemId && event.target.textContent === 'delete') {
+      groceryList = groceryList.filter((obj) => {
+        return obj.id !== Number(itemId)
+      });
+      event.target.parentElement.remove();
+    }
+  }
+
   function init() {
     submitBtnElement.addEventListener('click', addGroceryList);
     clearItemElement.addEventListener('click', clearGroceryList);
     groceryFormElement.addEventListener('submit', addGroceryList);
+    groceryListElement.addEventListener('click', editOrDeleteItem);
   }
 
   init();
